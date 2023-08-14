@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'assets/css/book_search.css' %}">
+
+  <section id="search" style="margin-top: 50px;">
+    <div class="container" data-aos="fade-up">
+    <form id="search-form" method="post">
+        {% csrf_token %}
+        <label class="book-search-label" for="book-item">Search book</label><br>
+        <input type="text" id="book-item" name="search-item" value="{{ link_content }}" style="width: 80%;">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    <hr>
+    <div id="search-results" style="height: 35rem;">
+        Your search results will appear here. As of August 2023, results will only come from Amazon.ca, Toronto Public Library, and Indigo & Chapters.
+        <span><br>Don't know what to search for? Get personalized recommendations with our <a href="/book-recommender/form/" target="_blank">book recommender</a>.</span>
+    </div>
+  </div>
+  </section>
+<script src="{% static 'assets/js/book_search.js' %}"></script>
+{% endblock %}

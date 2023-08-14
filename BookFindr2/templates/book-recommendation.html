@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}BookFindr - Book Recommender{% endblock %}
+
+{% block content %}
+{% load static %}
+<link href="{% static 'assets/css/book-recommendation.css' %}" rel="stylesheet">
+ <main id="main">
+  <section id="form-section" class="form-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-title" data-aos="fade-up">
+            <h2>Share Your Preferences</h2>
+          </div>
+          <form action="#" method="POST" role="form" id="chatForm">
+              {% csrf_token %}
+            <div class="form-group">
+                <label for="personalInterests">Personal Interests</label>
+                <textarea class="form-control" id="personalInterests" rows="3" maxLength="1500"></textarea>
+              <p style="font-size: 0.75rem; margin-top: 5px;">Max length: 1500 characters</p>
+            </div>
+
+            <div class="form-group">
+                <label for="pastReadingExperiences">Past Reading Experiences</label>
+                <textarea class="form-control" id="pastReadingExperiences" rows="3" maxLength="1500"
+                ></textarea>
+              <p style="font-size: 0.75rem; margin-top: 5px;">Max length: 1500 characters</p>
+              </div>
+
+            <div class="form-group">
+              <label for="ageGroup">Age Group</label>
+              <select class="form-control" id="ageGroup">
+                <option value="Under 18 years">Under 18 years</option>
+                <option value="18 to 25 years">18 - 25 years</option>
+                <option value="26 to 35 years">26 - 35 years</option>
+                <option value="36 to 50 years">36 - 50 years</option>
+                <option value="Above 50">Above 50 years</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+                <label for="specificNeeds">Specific Needs</label>
+                <textarea class="form-control" id="specificNeeds" maxLength="1000" rows="3"></textarea>
+              <p style="font-size: 0.75rem; margin-top: 5px;">Max length: 1000 characters</p>
+              </div>
+              <div class="col-md-12 text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+          </form>
+        </div>
+
+      </div>
+            <div id="responseContainer" class="mt-4" style="display: none;">
+            <label for="chatResponse" class="form-label">Recommendations:</label>
+            <textarea id="chatResponse" class="form-control" readonly style="height: 15rem;"></textarea>
+            <br>
+            <br>
+            <div id="book_rec_list">
+
+            </div>
+        </div>
+    </div>
+  </section>
+</main>
+  <script src="{% static 'assets/js/book-recommender.js' %}"></script>
+{% endblock %}

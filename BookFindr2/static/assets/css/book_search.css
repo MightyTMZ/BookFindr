@@ -1,0 +1,83 @@
+
+#content-container {
+  display: block;
+
+}
+
+
+body {
+font-family: 'Poppins', sans-serif;
+}
+
+
+label {
+  margin-top: 2rem;
+  font-weight: 700;
+  font-size: 1.8vw;
+  max-width: 2000px;
+}
+label, textarea {
+    display: block;
+}
+
+textarea {
+    width: 100%;
+    height: 20rem;
+}
+
+#book-item {
+    width: 75%;
+}
+
+
+@media (max-width: 1200px) {
+.book-search-label , textarea{
+    font-size: 1.25rem;
+    display: block;
+}
+}
+
+
+.productItem {
+display: flex;
+align-items: flex-start;
+margin-bottom: 60px; /* Add margin between result items */
+}
+
+.productImage {
+height: 100%;
+margin-right: 20px;
+}
+
+.productInfo {
+display: flex;
+flex-direction: column;
+font-family: 'Poppins', sans-serif;
+align-items: flex-start; /* Align items to the top */
+}
+
+/* Style for each price heading */
+h3 {
+margin: 0; /* Remove default margin */
+display: flex;
+align-items: center;
+font-family: 'Poppins', sans-serif;
+font-weight: 400;
+flex-wrap: wrap;
+}
+
+/* Style for the logos within the price headings */
+h3 img {
+margin-left: 10px; /* Add some spacing between price and logo */
+height: 20px; /* Adjust the logo size as needed */
+object-fit: cover; /* Add this line to control image fitting */
+}
+
+.productImage img {
+height: 100%; /* Set height for product image container */
+}
+
+
+.productTitle {
+font-weight: 700;
+}
