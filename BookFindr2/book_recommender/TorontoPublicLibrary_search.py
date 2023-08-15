@@ -36,7 +36,7 @@ def getTopSearchResultsTPL(search_keywords):
     try:
         retries = 3
         retry_delay = 2
-
+        webpage = requests.get(search_url, headers=HEADERS)
         while retries > 0:
             try:
                 webpage = requests.get(search_url, headers=HEADERS)
